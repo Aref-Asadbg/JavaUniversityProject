@@ -112,14 +112,14 @@ public class Department
     }
 
     // By Salary
-    public ArrayList<Employee> findBySalary(double rangeOne, double rangeTwo)
+    /*public ArrayList<Employee> findBySalary(double rangeOne, double rangeTwo)
     {
         ArrayList<Employee> result = new ArrayList<>();
         for(Employee e : employees)
         {
-            if(i fuck u = u will be pregnant pregnant hi my name is aref asadbegi)
+            if()
         }
-    }
+    }*/
 
 }
 
