@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Employee
 {
@@ -32,6 +33,9 @@ public class Employee
     private Activity status;
     private double salary;
 
+    // Has-a
+    private History history;
+
     // Constructor
     public Employee(String name, String lastName, String phoneNumber, String nationalId, LocalDate birthDate, Gender gender, Boolean manager, Activity status)
     {
@@ -45,6 +49,29 @@ public class Employee
         this.status = status;
         idNumber++;
         this.ID = idNumber;
+        this.history = new History();
+    }
+
+    // Salary In A Specific Date
+    public double totalSalaryCalc(LocalDate startDate, LocalDate endDate)
+    {
+        double totalIncome = 0.0;
+        for(Salary salary : history.salaries)
+        {
+            LocalDate salaryStart = salary.getStartDate();
+            LocalDate salaryEnd = salary.getEndDate();
+
+            if((salaryStart.isBefore(endDate) || salaryStart.isEqual(endDate)) &&
+                    (salaryEnd.isAfter(startDate) || salaryEnd.isEqual(startDate)))
+            {
+                LocalDate effectiveStart = salaryStart.isBefore(startDate) ? startDate : salaryStart;
+                LocalDate effectiveEnd = salaryEnd.isAfter(endDate) ? endDate : salaryEnd;
+
+                long monthsBetween = ChronoUnit.MONTHS.between(effectiveStart.withDayOfMonth(1), effectiveEnd.withDayOfMonth(1)) + 1;
+                totalIncome += monthsBetween * salary.perMonthSalary();
+            }
+        }
+        return totalIncome;
     }
 
     // Setter methods

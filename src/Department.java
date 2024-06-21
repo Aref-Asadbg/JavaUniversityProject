@@ -8,6 +8,9 @@ public class Department
     private String name;
     ArrayList<Employee> employees = new ArrayList<Employee>();
 
+    // Has-a
+    private Employee employee;
+
     // Constructor
     public Department(String name)
     {
@@ -42,7 +45,7 @@ public class Department
 
     // Search Part
     // By name
-    public ArrayList<Employee> nameFinder(String firstName, String lastName)
+    public ArrayList<Employee> findByName(String firstName, String lastName)
     {
         ArrayList<Employee> result = new ArrayList<>();
         for (Employee e : employees)
@@ -55,7 +58,7 @@ public class Department
     }
 
     // By NationalId
-    public Employee nationalIdFinder(String nationalId)
+    public Employee findByNationalId(String nationalId)
     {
         for (Employee e : employees)
         {
@@ -68,7 +71,7 @@ public class Department
     }
 
     // By PhoneNumber
-    public ArrayList<Employee> phoneNumberFinder(String phoneNumber)
+    public ArrayList<Employee> findByPhoneNumber(String phoneNumber)
     {
         ArrayList<Employee> result = new ArrayList<>();
         for (Employee e : employees)
@@ -95,7 +98,7 @@ public class Department
     }
 
     // By BirthDate
-    public ArrayList<Employee> birthDateFinder(LocalDate birthDate)
+    public ArrayList<Employee> findByBirthDate(LocalDate birthDate)
     {
         ArrayList<Employee> result = new ArrayList<>();
         for (Employee e : employees)
@@ -109,7 +112,14 @@ public class Department
     }
 
     // By Salary
-
+    public ArrayList<Employee> findBySalary(double rangeOne, double rangeTwo)
+    {
+        ArrayList<Employee> result = new ArrayList<>();
+        for(Employee e : employees)
+        {
+            if(i fuck u = u will be pregnant pregnant hi my name is aref asadbegi)
+        }
+    }
 
 }
 
