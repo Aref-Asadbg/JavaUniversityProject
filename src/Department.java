@@ -19,6 +19,17 @@ public class Department
     }
 
     // Method's
+    // LastId Number
+    public long setIdNumber()
+    {
+        if(!employees.isEmpty())
+        {
+            employee = employees.get(employees.size()-1);
+            return employee.getIdNumber();
+        }
+        return 0;
+    }
+
     // Add employees
     public void addEmployee(Employee e)
     {
@@ -112,15 +123,22 @@ public class Department
     }
 
     // By Salary
-    /*public ArrayList<Employee> findBySalary(double rangeOne, double rangeTwo)
+    public ArrayList<Employee> findBySalary(double rangeOne, double rangeTwo)
     {
         ArrayList<Employee> result = new ArrayList<>();
         for(Employee e : employees)
         {
-            if()
+            if(!e.history.salaries.isEmpty())
+            {
+                Salary lastSalary = e.history.salaries.get(e.history.salaries.size() - 1);
+                if(lastSalary.perMonthSalary() >= rangeOne && lastSalary.perMonthSalary() <= rangeTwo)
+                {
+                    result.add(e);
+                }
+            }
         }
-    }*/
-
+        return result;
+    }
 }
 
 

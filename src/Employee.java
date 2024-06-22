@@ -34,7 +34,7 @@ public class Employee
     private double salary;
 
     // Has-a
-    private History history;
+    History history;
 
     // Constructor
     public Employee(String name, String lastName, String phoneNumber, String nationalId, LocalDate birthDate, Gender gender, Boolean manager, Activity status)
@@ -95,6 +95,10 @@ public class Employee
         this.phoneNumber = phoneNumber;
     }
 
+    public void setIdNumber(Long idNumber) {
+        this.idNumber = idNumber;
+    }
+
     // Getter methods
     public String getFirstName() {
         return firstName;
@@ -130,6 +134,11 @@ public class Employee
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public long getIdNumber()
+    {
+        return idNumber;
     }
 
     // toString method
