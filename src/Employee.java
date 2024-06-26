@@ -32,12 +32,14 @@ public class Employee
     private Boolean manager;
     private Activity status;
     private double salary;
+    private String userName;
+    private String password;
 
     // Has-a
     History history;
 
     // Constructor
-    public Employee(String name, String lastName, String phoneNumber, String nationalId, LocalDate birthDate, Gender gender, Boolean manager, Activity status)
+    public Employee(String name, String lastName, String phoneNumber, String nationalId, LocalDate birthDate, Gender gender, String userName, String password, Boolean manager, Activity status)
     {
         this.firstName = name;
         this.lastName = lastName;
@@ -50,6 +52,8 @@ public class Employee
         idNumber++;
         this.ID = idNumber;
         this.history = new History();
+        this.userName = userName;
+        this.password = password;
     }
 
     // Salary In A Specific Date
@@ -99,6 +103,14 @@ public class Employee
         this.idNumber = idNumber;
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     // Getter methods
     public String getFirstName() {
         return firstName;
@@ -141,6 +153,14 @@ public class Employee
         return idNumber;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     // toString method
     @Override
     public String toString() {
@@ -151,6 +171,8 @@ public class Employee
                     ", lastName='" + lastName + '\'' +
                     ", PhoneNumber='" + phoneNumber + '\'' +
                     ", nationalId='" + nationalId + '\'' +
+                    ", userName='" + userName + '\'' +
+                    ", password='" + password + '\'' +
                     ", birthDate=" + birthDate +
                     ", gender=" + gender +
                     ", ID=" + ID +
@@ -163,6 +185,8 @@ public class Employee
                     ", lastName='" + lastName + '\'' +
                     ", PhoneNumber='" + phoneNumber + '\'' +
                     ", nationalId='" + nationalId + '\'' +
+                    ", userName='" + userName + '\'' +
+                    ", password='" + password + '\'' +
                     ", birthDate=" + birthDate +
                     ", gender=" + gender +
                     ", ID=" + ID +

@@ -96,7 +96,7 @@ public class Department
     }
 
     // By Id
-    public Employee idFinder(long id)
+    public Employee findById(long id)
     {
         for (Employee e : employees)
         {
